@@ -17,14 +17,17 @@ DERIVS_DIR="derivatives"
 
 # Designate a templateflow bind-mount point
 
-SINGULARITY_CMD="singularity run --cleanenv -B ${BIDS_DIR}:/tmp -B /ptmp/fbeyer/wd:/tmp/wd -B ${BIDS_DIR}/DERIVS_DIR:/tmp/${DERIVS_DIR} /u/fbeyer/mriqc_1.5.0.simg"
+#SINGULARITY_CMD="singularity run --cleanenv -B ${BIDS_DIR}:/tmp -B /ptmp/fbeyer/wd:/tmp/wd -B ${BIDS_DIR}/DERIVS_DIR:/tmp/${DERIVS_DIR} /u/fbeyer/mriqc_1.5.0.simg"
 
 # Parse the participants.tsv file and extract one subject ID from the line corresponding to this SLURM task.
 subject=$( sed -n -E "$((${SLURM_ARRAY_TASK_ID} + 1))s/sub-(\S*)\>.*/\1/gp" ${BIDS_DIR}/participants.tsv )
 
 
 # Compose the command line
-cmd="${SINGULARITY_CMD} /tmp /tmp/${DERIVS_DIR} participant -m T1w -w tmp/wd"
+#cmd="${SINGULARITY_CMD} /tmp /tmp/${DERIVS_DIR} participant -m T1w -w tmp/wd"
+
+cmd="singularity run -B /ptmp/fbeyer/BIDS_test,/ptmp/fbeyer/BIDS_test/derivatives,/ptmp/fbeyer/wd /u/fbeyer/mriqc_0.15.0.simg /ptmp/fbeyer/BIDS_test /ptmp/fbeyer/BIDS_test/derivatives/mriqc participant --participant-label ${subject} -m T1w -w /ptmp/fbeyer/wd"
+
 
 # Setup done, run the command
 echo Running task ${SLURM_ARRAY_TASK_ID}
