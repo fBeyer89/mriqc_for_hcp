@@ -26,7 +26,9 @@ subject=$( sed -n -E "$((${SLURM_ARRAY_TASK_ID} + 1))s/sub-(\S*)\>.*/\1/gp" ${BI
 # Compose the command line
 #cmd="${SINGULARITY_CMD} /tmp /tmp/${DERIVS_DIR} participant -m T1w -w tmp/wd"
 
-cmd="singularity run -B /ptmp/fbeyer/BIDS_test,/ptmp/fbeyer/BIDS_test/derivatives,/ptmp/fbeyer/wd /u/fbeyer/mriqc_0.15.0.simg /ptmp/fbeyer/BIDS_test /ptmp/fbeyer/BIDS_test/derivatives/mriqc participant --participant-label ${subject} -m T1w -w /ptmp/fbeyer/wd"
+cmd="singularity run -B /ptmp/fbeyer/BIDS_test,/ptmp/fbeyer/BIDS_test/derivatives,/ptmp/fbeyer/wd 
+/u/fbeyer/mriqc_for_hcp/mriqc_0.15.0.simg /ptmp/fbeyer/BIDS_test /ptmp/fbeyer/BIDS_test/derivatives/mriqc 
+participant --participant-label ${subject} -m T1w -w /ptmp/fbeyer/wd"
 
 
 # Setup done, run the command
