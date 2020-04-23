@@ -18,10 +18,10 @@ DERIVS_DIR="derivatives"
 # Designate a templateflow bind-mount point
 
 #SINGULARITY_CMD="singularity run --cleanenv -B ${BIDS_DIR}:/tmp -B /ptmp/fbeyer/wd:/tmp/wd -B ${BIDS_DIR}/DERIVS_DIR:/tmp/${DERIVS_DIR} /u/fbeyer/mriqc_1.5.0.simg"
-
+echo "parsing subject"
 # Parse the participants.tsv file and extract one subject ID from the line corresponding to this SLURM task.
 subject=$( sed -n -E "$((${SLURM_ARRAY_TASK_ID} + 1))s/sub-(\S*)\>.*/\1/gp" ${BIDS_DIR}/participants.tsv )
-
+echo "subject"
 
 # Compose the command line
 #cmd="${SINGULARITY_CMD} /tmp /tmp/${DERIVS_DIR} participant -m T1w -w tmp/wd"
