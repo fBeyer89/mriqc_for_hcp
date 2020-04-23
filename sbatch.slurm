@@ -7,8 +7,8 @@
 #SBATCH --mem-per-cpu=2G
 #SBATCH --partition small
 # Outputs ----------------------------------
-#SBATCH -o log/%x-%A-%a.out
-#SBATCH -e log/%x-%A-%a.err
+#SBATCH -o /u/fbeyer/log/%x-%A-%a.out
+#SBATCH -e /u/fbeyer/llog/%x-%A-%a.err
 #SBATCH --mail-type=none
 # ------------------------------------------
 
