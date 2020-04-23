@@ -1,0 +1,259 @@
+3321997
+Running task 1
+Commandline: singularity run -B /ptmp/fbeyer/BIDS_test,/ptmp/fbeyer/BIDS_test/derivatives,/ptmp/fbeyer/wd /u/fbeyer/mriqc_for_hcp/mriqc_0.15.0.simg /ptmp/fbeyer/BIDS_test /ptmp/fbeyer/BIDS_test/derivatives/mriqc participant --participant-label 3321997 -m T1w -w /ptmp/fbeyer/wd
+2020-04-23 11:02:57,948 mriqc:IMPORTANT 
+    Running MRIQC version 0.15.0:
+      * BIDS dataset path: /ptmp/fbeyer/BIDS_test.
+      * Output folder: /ptmp/fbeyer/BIDS_test/derivatives/mriqc.
+      * Analysis levels: participant.
+    
+2020-04-23 11:03:01,265 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+
+2020-04-23 11:03:03,664 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+
+2020-04-23 11:03:05,403 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+
+2020-04-23 11:03:05,419 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/site-packages/nilearn/datasets/neurovault.py:16: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Container
+
+2020-04-23 11:03:06,512 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/site-packages/networkx/classes/reportviews.py:95: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Mapping, Set, Iterable
+
+200423-11:03:06,735 nipype.workflow INFO:
+	 Building anatomical MRIQC workflow, datasets list: ['sub-3321997/ses-bl/anat/sub-3321997_ses-bl_T1w.nii.gz']
+2020-04-23 11:03:06,735 nipype.workflow:INFO Building anatomical MRIQC workflow, datasets list: ['sub-3321997/ses-bl/anat/sub-3321997_ses-bl_T1w.nii.gz']
+2020-04-23 11:03:12,877 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+
+2020-04-23 11:03:13,010 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+
+2020-04-23 11:03:13,018 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/site-packages/nilearn/datasets/neurovault.py:16: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Container
+
+2020-04-23 11:03:13,413 mriqc:WARNING Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+2020-04-23 11:03:13,906 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/site-packages/numpy/matrixlib/defmatrix.py:68: PendingDeprecationWarning: the matrix subclass is not the recommended way to represent matrices or deal with linear algebra (see https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html). Please adjust your code to use regular ndarray.
+  return matrix(data, dtype=dtype, copy=False)
+
+200423-11:03:21,443 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.inu_n4" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/inu_n4".
+200423-11:03:21,478 nipype.workflow INFO:
+	 [Node] Running "inu_n4" ("nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/conform/sub-3321997_ses-bl_T1w_conformed.nii.gz --output [ sub-3321997_ses-bl_T1w_conformed_corrected.nii.gz, sub-3321997_ses-bl_T1w_conformed_bias.nii.gz ]
+200423-11:03:24,427 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.metadata" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/metadata".
+200423-11:03:24,457 nipype.workflow INFO:
+	 [Node] Running "metadata" ("niworkflows.interfaces.bids.ReadSidecarJSON")
+200423-11:03:24,591 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.metadata".
+200423-11:08:13,44 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.inu_n4".
+200423-11:08:15,932 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.skullstrip" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/skullstrip".
+200423-11:08:15,937 nipype.workflow INFO:
+	 [Node] Running "skullstrip" ("nipype.interfaces.afni.preprocess.SkullStrip"), a CommandLine Interface with command:
+3dSkullStrip -input /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/skullstrip/sub-3321997_ses-bl_T1w_conformed_corrected.nii.gz -prefix sub-3321997_ses-bl_T1w_conformed_corrected_skullstrip.nii.gz
+200423-11:08:16,66 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.HeadMaskWorkflow.fsl_bet" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/HeadMaskWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/fsl_bet".
+200423-11:08:16,74 nipype.workflow INFO:
+	 [Node] Running "fsl_bet" ("nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/inu_n4/sub-3321997_ses-bl_T1w_conformed_corrected.nii.gz /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/HeadMaskWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/fsl_bet/sub-3321997_ses-bl_T1w_conformed_corrected_brain.nii.gz -A
+200423-11:09:42,972 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.HeadMaskWorkflow.fsl_bet".
+200423-11:13:50,62 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.skullstrip".
+200423-11:13:52,233 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.sstrip_orig_vol" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/sstrip_orig_vol".
+200423-11:13:52,238 nipype.workflow INFO:
+	 [Node] Running "sstrip_orig_vol" ("nipype.interfaces.afni.utils.Calc"), a CommandLine Interface with command:
+3dcalc -a /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/conform/sub-3321997_ses-bl_T1w_conformed.nii.gz -b /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/skullstrip/sub-3321997_ses-bl_T1w_conformed_corrected_skullstrip.nii.gz -expr "a*step(b)" -prefix sub-3321997_ses-bl_T1w_conformed_calc.nii.gz
+200423-11:13:54,255 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.sstrip_orig_vol".
+200423-11:13:57,271 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.binarize" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/binarize".
+200423-11:13:57,274 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.segmentation" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/segmentation".
+200423-11:13:57,276 nipype.workflow INFO:
+	 [Node] Running "binarize" ("nipype.interfaces.fsl.maths.Threshold"), a CommandLine Interface with command:
+fslmaths /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/sstrip_orig_vol/sub-3321997_ses-bl_T1w_conformed_calc.nii.gz -thr 0.0010000000 -bin /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/binarize/sub-3321997_ses-bl_T1w_conformed_calc_thresh.nii.gz
+200423-11:13:57,282 nipype.workflow INFO:
+	 [Node] Running "segmentation" ("nipype.interfaces.fsl.preprocess.FAST"), a CommandLine Interface with command:
+fast -t 1 -o segment -g -S 1 /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/segmentation/sub-3321997_ses-bl_T1w_conformed_calc.nii.gz
+200423-11:13:58,372 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.AFNISkullStripWorkflow.binarize".
+200423-11:14:00,217 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.smoothness" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/smoothness".
+200423-11:14:00,221 nipype.workflow INFO:
+	 [Node] Running "smoothness" ("nipype.interfaces.afni.utils.FWHMx"), a CommandLine Interface with command:
+3dFWHMx -ShowMeClassicFWHM -combine -detrend -input /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/conform/sub-3321997_ses-bl_T1w_conformed.nii.gz -mask /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/binarize/sub-3321997_ses-bl_T1w_conformed_calc_thresh.nii.gz -detprefix sub-3321997_ses-bl_T1w_conformed_detrend -out sub-3321997_ses-bl_T1w_conformed_subbricks.out > sub-3321997_ses-bl_T1w_conformed_fwhmx.out
+200423-11:14:00,925 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.PlotMosaicZoomed" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ReportsWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/PlotMosaicZoomed".
+2020-04-23 11:14:00,925 nipype.workflow:INFO [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.PlotMosaicZoomed" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ReportsWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/PlotMosaicZoomed".
+200423-11:14:00,940 nipype.workflow INFO:
+	 [Node] Running "PlotMosaicZoomed" ("mriqc.interfaces.viz.PlotMosaic")
+2020-04-23 11:14:00,940 nipype.workflow:INFO [Node] Running "PlotMosaicZoomed" ("mriqc.interfaces.viz.PlotMosaic")
+200423-11:14:01,482 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.SpatialNormalization.SpatialNormalization" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/SpatialNormalization/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/SpatialNormalization".
+200423-11:14:01,492 nipype.workflow INFO:
+	 [Node] Running "SpatialNormalization" ("niworkflows.interfaces.registration.RobustMNINormalizationRPT")
+200423-11:14:21,266 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.smoothness".
+200423-11:14:24,757 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.PlotMosaicZoomed".
+2020-04-23 11:14:24,757 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.PlotMosaicZoomed".
+200423-11:14:29,249 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.MergePlots" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ReportsWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MergePlots".
+200423-11:14:29,256 nipype.workflow INFO:
+	 [Node] Running "MergePlots" ("nipype.interfaces.utility.base.Merge")
+200423-11:14:29,271 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.MergePlots".
+200423-11:19:35,907 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.SpatialNormalization.SpatialNormalization".
+200423-11:19:38,555 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.AirMaskWorkflow.invert_xfm" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AirMaskWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/invert_xfm".
+200423-11:19:38,562 nipype.workflow INFO:
+	 [Node] Running "invert_xfm" ("nipype.interfaces.ants.resampling.ApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /opt/templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_res-01_desc-head_mask.nii.gz --interpolation MultiLabel --output tpl-MNI152NLin2009cAsym_res-01_desc-head_mask_trans.nii.gz --reference-image /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AFNISkullStripWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/binarize/sub-3321997_ses-bl_T1w_conformed_calc_thresh.nii.gz --transform /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/SpatialNormalization/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/SpatialNormalization/ants_t1_to_mniInverseComposite.h5
+200423-11:19:40,577 nipype.workflow INFO:
+	 [Node] Setting-up "_MNItpms2t12" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MNItpms2t1/mapflow/_MNItpms2t12".
+200423-11:19:40,577 nipype.workflow INFO:
+	 [Node] Setting-up "_MNItpms2t11" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MNItpms2t1/mapflow/_MNItpms2t11".
+200423-11:19:40,581 nipype.workflow INFO:
+	 [Node] Running "_MNItpms2t12" ("nipype.interfaces.ants.resampling.ApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /opt/templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_res-01_label-WM_probseg.nii.gz --interpolation Linear --output tpl-MNI152NLin2009cAsym_res-01_label-WM_probseg_trans.nii.gz --reference-image /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/conform/sub-3321997_ses-bl_T1w_conformed.nii.gz --transform /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/SpatialNormalization/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/SpatialNormalization/ants_t1_to_mniInverseComposite.h5
+200423-11:19:40,582 nipype.workflow INFO:
+	 [Node] Running "_MNItpms2t11" ("nipype.interfaces.ants.resampling.ApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /opt/templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_res-01_label-GM_probseg.nii.gz --interpolation Linear --output tpl-MNI152NLin2009cAsym_res-01_label-GM_probseg_trans.nii.gz --reference-image /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/conform/sub-3321997_ses-bl_T1w_conformed.nii.gz --transform /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/SpatialNormalization/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/SpatialNormalization/ants_t1_to_mniInverseComposite.h5
+200423-11:19:42,4 nipype.workflow INFO:
+	 [Node] Setting-up "_MNItpms2t10" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MNItpms2t1/mapflow/_MNItpms2t10".
+200423-11:19:42,11 nipype.workflow INFO:
+	 [Node] Running "_MNItpms2t10" ("nipype.interfaces.ants.resampling.ApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /opt/templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_res-01_label-CSF_probseg.nii.gz --interpolation Linear --output tpl-MNI152NLin2009cAsym_res-01_label-CSF_probseg_trans.nii.gz --reference-image /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/conform/sub-3321997_ses-bl_T1w_conformed.nii.gz --transform /ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/SpatialNormalization/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/SpatialNormalization/ants_t1_to_mniInverseComposite.h5
+200423-11:19:46,314 nipype.workflow INFO:
+	 [Node] Finished "_MNItpms2t11".
+200423-11:19:46,337 nipype.workflow INFO:
+	 [Node] Finished "_MNItpms2t12".
+200423-11:19:49,552 nipype.workflow INFO:
+	 [Node] Finished "_MNItpms2t10".
+200423-11:19:52,564 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.MNItpms2t1" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MNItpms2t1".
+200423-11:19:52,570 nipype.workflow INFO:
+	 [Node] Setting-up "_MNItpms2t10" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MNItpms2t1/mapflow/_MNItpms2t10".
+200423-11:19:52,572 nipype.workflow INFO:
+	 [Node] Cached "_MNItpms2t10" - collecting precomputed outputs
+200423-11:19:52,572 nipype.workflow INFO:
+	 [Node] "_MNItpms2t10" found cached.
+200423-11:19:52,573 nipype.workflow INFO:
+	 [Node] Setting-up "_MNItpms2t11" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MNItpms2t1/mapflow/_MNItpms2t11".
+200423-11:19:52,574 nipype.workflow INFO:
+	 [Node] Cached "_MNItpms2t11" - collecting precomputed outputs
+200423-11:19:52,574 nipype.workflow INFO:
+	 [Node] "_MNItpms2t11" found cached.
+200423-11:19:52,576 nipype.workflow INFO:
+	 [Node] Setting-up "_MNItpms2t12" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/MNItpms2t1/mapflow/_MNItpms2t12".
+200423-11:19:52,577 nipype.workflow INFO:
+	 [Node] Cached "_MNItpms2t12" - collecting precomputed outputs
+200423-11:19:52,577 nipype.workflow INFO:
+	 [Node] "_MNItpms2t12" found cached.
+200423-11:19:52,583 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.MNItpms2t1".
+200423-11:22:51,298 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.AirMaskWorkflow.invert_xfm".
+200423-11:22:57,395 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.AirMaskWorkflow.ArtifactMask" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AirMaskWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/ArtifactMask".
+2020-04-23 11:22:57,395 nipype.workflow:INFO [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.AirMaskWorkflow.ArtifactMask" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/AirMaskWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/ArtifactMask".
+200423-11:22:57,400 nipype.workflow INFO:
+	 [Node] Running "ArtifactMask" ("mriqc.interfaces.anatomical.ArtifactMask")
+2020-04-23 11:22:57,400 nipype.workflow:INFO [Node] Running "ArtifactMask" ("mriqc.interfaces.anatomical.ArtifactMask")
+200423-11:23:04,350 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.AirMaskWorkflow.ArtifactMask".
+2020-04-23 11:23:04,350 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.AirMaskWorkflow.ArtifactMask".
+200423-11:23:06,702 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.provenance" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/provenance".
+200423-11:23:06,722 nipype.workflow INFO:
+	 [Node] Running "provenance" ("nipype.interfaces.utility.wrappers.Function")
+200423-11:23:07,83 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.provenance".
+2020-04-23 11:23:07,083 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.provenance".
+200423-11:23:08,130 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.ComputeQI2" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/ComputeQI2".
+2020-04-23 11:23:08,130 nipype.workflow:INFO [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.ComputeQI2" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/ComputeQI2".
+200423-11:23:08,134 nipype.workflow INFO:
+	 [Node] Running "ComputeQI2" ("mriqc.interfaces.anatomical.ComputeQI2")
+2020-04-23 11:23:08,134 nipype.workflow:INFO [Node] Running "ComputeQI2" ("mriqc.interfaces.anatomical.ComputeQI2")
+200423-11:23:08,515 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.ComputeQI2".
+2020-04-23 11:23:08,515 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.ComputeQI2".
+200423-11:23:17,53 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.segmentation".
+200423-11:23:19,584 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.harmonize" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/harmonize".
+2020-04-23 11:23:19,584 nipype.workflow:INFO [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.harmonize" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/harmonize".
+200423-11:23:19,588 nipype.workflow INFO:
+	 [Node] Running "harmonize" ("mriqc.interfaces.anatomical.Harmonize")
+2020-04-23 11:23:19,588 nipype.workflow:INFO [Node] Running "harmonize" ("mriqc.interfaces.anatomical.Harmonize")
+200423-11:23:22,842 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.harmonize".
+2020-04-23 11:23:22,842 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.harmonize".
+200423-11:23:25,606 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.measures" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/measures".
+2020-04-23 11:23:25,606 nipype.workflow:INFO [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.measures" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ComputeIQMs/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/measures".
+200423-11:23:25,611 nipype.workflow INFO:
+	 [Node] Running "measures" ("mriqc.interfaces.anatomical.StructuralQC")
+2020-04-23 11:23:25,611 nipype.workflow:INFO [Node] Running "measures" ("mriqc.interfaces.anatomical.StructuralQC")
+2020-04-23 11:23:28,673 root:WARNING calculating summary stats of label "bg" in a very small mask (137 voxels)
+200423-11:23:34,520 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.measures".
+2020-04-23 11:23:34,520 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.ComputeIQMs.measures".
+2020-04-23 11:23:37,142 py.warnings:WARNING /usr/local/miniconda/lib/python3.7/site-packages/numpy/matrixlib/defmatrix.py:68: PendingDeprecationWarning: the matrix subclass is not the recommended way to represent matrices or deal with linear algebra (see https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html). Please adjust your code to use regular ndarray.
+  return matrix(data, dtype=dtype, copy=False)
+
+200423-11:23:38,781 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.GenerateReport" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/ReportsWorkflow/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/GenerateReport".
+200423-11:23:38,786 nipype.workflow INFO:
+	 [Node] Running "GenerateReport" ("nipype.interfaces.utility.wrappers.Function")
+200423-11:23:39,425 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.GenerateReport".
+2020-04-23 11:23:39,425 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.ReportsWorkflow.GenerateReport".
+200423-11:23:39,503 nipype.workflow INFO:
+	 [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.UploadMetrics" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/UploadMetrics".
+2020-04-23 11:23:39,503 nipype.workflow:INFO [Node] Setting-up "workflow_enumerator.anatMRIQCT1w.UploadMetrics" in "/ptmp/fbeyer/wd/workflow_enumerator/anatMRIQCT1w/_in_file_..ptmp..fbeyer..BIDS_test..sub-3321997..ses-bl..anat..sub-3321997_ses-bl_T1w.nii.gz/UploadMetrics".
+200423-11:23:39,507 nipype.workflow INFO:
+	 [Node] Running "UploadMetrics" ("mriqc.interfaces.webapi.UploadIQMs")
+2020-04-23 11:23:39,507 nipype.workflow:INFO [Node] Running "UploadMetrics" ("mriqc.interfaces.webapi.UploadIQMs")
+200423-11:23:40,7 nipype.interface INFO:
+	 MRIQC Web API: submitting to <https://mriqc.nimh.nih.gov:443/api/v1/T1w>
+2020-04-23 11:23:40,007 nipype.interface:INFO MRIQC Web API: submitting to <https://mriqc.nimh.nih.gov:443/api/v1/T1w>
+200423-11:23:40,563 nipype.interface INFO:
+	 QC metrics successfully uploaded.
+2020-04-23 11:23:40,563 nipype.interface:INFO QC metrics successfully uploaded.
+200423-11:23:40,571 nipype.workflow INFO:
+	 [Node] Finished "workflow_enumerator.anatMRIQCT1w.UploadMetrics".
+2020-04-23 11:23:40,571 nipype.workflow:INFO [Node] Finished "workflow_enumerator.anatMRIQCT1w.UploadMetrics".
+2020-04-23 11:23:43,237 mriqc:WARNING Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+Finished tasks 1 with exit code 0
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: fbeyer(42967)
+Job name:  mriqc
+Node list: dra0766
+Job start: Thu Apr 23 11:02:51 CEST 2020
+Job end:   Thu Apr 23 11:23:44 CEST 2020
+Work dir:  /draco/u/fbeyer/mriqc_for_hcp
+Command:   /draco/u/fbeyer/mriqc_for_hcp/sbatch.slurm
+  
+  
+  
+================================================================================ 
+Information on jobsteps (Note: MaxRSS is per task, cf. "man sacct"): 
+================================================================================ 
+  
+       JobID    JobName NNodes NTasks  NCPUS     MaxRSS    Elapsed ExitCode 
+------------ ---------- ------ ------ ------ ---------- ---------- -------- 
+  
