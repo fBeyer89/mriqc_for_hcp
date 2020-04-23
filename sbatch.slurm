@@ -20,7 +20,14 @@ DERIVS_DIR="derivatives"
 #SINGULARITY_CMD="singularity run --cleanenv -B ${BIDS_DIR}:/tmp -B /ptmp/fbeyer/wd:/tmp/wd -B ${BIDS_DIR}/DERIVS_DIR:/tmp/${DERIVS_DIR} /u/fbeyer/mriqc_1.5.0.simg"
 echo "parsing subject"
 # Parse the participants.tsv file and extract one subject ID from the line corresponding to this SLURM task.
-subject=$( sed -n -E "$((${SLURM_ARRAY_TASK_ID} + 1))s/sub-(\S*)\>.*/\1/gp" ${BIDS_DIR}/participants.tsv )
+#subject=$( sed -n -E "$((${SLURM_ARRAY_TASK_ID} + 1))s/sub-(\S*)\>.*/\1/gp" ${BIDS_DIR}/participants.tsv )
+
+if [ ${SLURM_ARRAY_TASK_ID} == 1 ];
+then
+subject="3321997"
+else
+subject="294816c"
+fi
 
 echo $subject
 
