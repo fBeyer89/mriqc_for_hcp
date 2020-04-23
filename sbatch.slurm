@@ -21,7 +21,9 @@ DERIVS_DIR="derivatives"
 echo "parsing subject"
 # Parse the participants.tsv file and extract one subject ID from the line corresponding to this SLURM task.
 subject=$( sed -n -E "$((${SLURM_ARRAY_TASK_ID} + 1))s/sub-(\S*)\>.*/\1/gp" ${BIDS_DIR}/participants.tsv )
-echo "$subject"
+
+echo $subject
+
 
 # Compose the command line
 #cmd="${SINGULARITY_CMD} /tmp /tmp/${DERIVS_DIR} participant -m T1w -w tmp/wd"
